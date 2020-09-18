@@ -5,6 +5,17 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
-    
-    pass
+    '''
+    this function counts the number of times 'th' 
+    appears inside the string
+    '''
+   
+    # empty string would be the base case
+    if word == '':
+        return 0
+    # add the count by 1 if 'th' is present
+    if word[0:2] == 'th':
+        return 1 + count_th(word[1:])
+    # otherwise keep moving to next index in a word
+    else:
+        return count_th(word[1:])
