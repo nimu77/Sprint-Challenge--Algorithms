@@ -96,12 +96,17 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        # loop through list 
         for i in range(0, len(self._list)-1):
+            # create a index pointer
             current_index = i
+            # pointer for smallest index
             smallest_index = current_index
+            # nested for loop to move smallest index to the front of list
             for j in range(current_index + 1, len(self._list)):
                 if self._list[smallest_index] > self._list[j]:
                     smallest_index = j
+            # swap
             self._list[smallest_index], self._list[current_index] = self._list[current_index], self._list[smallest_index]
             
         return self._list

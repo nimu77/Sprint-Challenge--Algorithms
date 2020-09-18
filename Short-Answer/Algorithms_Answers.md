@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a) It is O(n).
+a) It is O(n). It is O(n) because while loop iterates through input value of n and increases the value of (a). If the value of a is higher than 3*n then the loop ends.
 
 
-b) It is O(nlogn)
+b) It is O(nlogn). For this, the first for loop iterates through the given input making it O(n). The while loop has a condition which increments by multiplication of 2 which decreases the number of times it iterates making it O(logn). Overall, it is O(nlogn).
 
 
-c) It is O(n).
+c) It is O(n). In this recursive function, the function is being called n times until it reaches the base case, which makes this linear, so it is O(n).
 
 ## Exercise II
 
