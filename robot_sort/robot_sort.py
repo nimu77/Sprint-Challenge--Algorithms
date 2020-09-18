@@ -96,15 +96,23 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        swap = True
-        while swap:
-            swap = False
-            for i in range(len(self._list) - 1):
-                if self._list[i] > self._list[i + 1]:
-                    
-                    self._list[i], self._list[i + 1] = self._list[i + 1], self._list[i]
-                    
-                    swap = True
+        self.set_light_on()
+        while self.light_is_on():
+            self.set_light_off()
+            self.swap_item()
+            while self.can_move_right():
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.set_light_on()
+            while self.can_move_left():
+                if self.compare_item() == None:
+                    break
+                else:
+                    self.move_left()
+            self.swap_item()
+            self.move_right()
+                
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
